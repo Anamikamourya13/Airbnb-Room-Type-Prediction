@@ -2,9 +2,9 @@
 // CONFIG
 // ============================================================
 // Point this at wherever your FastAPI app is running.
-const API_BASE_URL = "https://airbnb-room-type-prediction.onrender.com";
+const API_BASE_URL = "";
 const PREDICT_ENDPOINT = `${API_BASE_URL}/predict`;
-const HEALTH_ENDPOINT = `${API_BASE_URL}/`;
+const HEALTH_ENDPOINT = `${API_BASE_URL}/health`;
 
 const REDUCE_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

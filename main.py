@@ -1,3 +1,7 @@
+
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+
 from fastapi import FastAPI
 import pandas as pd
 from pydantic import BaseModel, Field
@@ -51,3 +55,15 @@ def predict(features: Features):
     return {
         "Predicted_room_type": prediction[0],
         "Probability": probability.tolist()[0]}
+    
+@app.get("/")
+def home():
+    return FileResponse("index.html")
+
+@app.get("/script.js")
+def get_script():
+    return FileResponse("script.js")
+
+@app.get("/style.css")
+def get_style():
+    return FileResponse("style.css")    
